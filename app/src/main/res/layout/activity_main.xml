@@ -4,15 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/background">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/display"
+        android:text="@string/b_zero"
+        android:background="@color/lavenderBlush"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_width="0dp"
+        android:padding="@dimen/background_padding"
+        android:layout_marginBottom="@dimen/background_margin"
+        android:textColor="@color/indigo"
+        android:textSize="@dimen/text_size_display"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/result"/>
+
+    <TextView
+        android:id="@+id/result"
+        android:text="@string/result"
+        android:background="@color/lavender"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:padding="@dimen/background_padding"
+        android:textColor="@color/indigo"
+        android:textSize="@dimen/text_size_display_result"
+        app:layout_constraintBottom_toTopOf="@id/keyboard"/>
+
+    <include
+        android:id="@+id/keyboard"
+        layout="@layout/keyboard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

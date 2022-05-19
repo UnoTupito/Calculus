@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">Calculus</string>
+    <string name="clear">C</string>
+    <string name="backspace"><![CDATA[<|]]></string>
+    <string name="percent">%</string>
+    <string name="division">÷</string>
+    <string name="subtraction">-</string>
+    <string name="addition">+</string>
+    <string name="b_one">1</string>
+    <string name="b_two">2</string>
+    <string name="b_three">3</string>
+    <string name="b_zero">0</string>
+    <string name="b_dot">.</string>
+    <string name="b_four">4</string>
+    <string name="b_five">5</string>
+    <string name="b_six">6</string>
+    <string name="b_seven">7</string>
+    <string name="b_eight">8</string>
+    <string name="b_nine">9</string>
+    <string name="b_multiplication">x</string>
+    <string name="b_equals">=</string>
+    <string name="result">=0</string>
 </resources>
