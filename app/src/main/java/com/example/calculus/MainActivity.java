@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,8 +13,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView displayResult;
     private String task = "";
     private String result = "";
-    private static final String TASK_KEY = "TASK_KEY";
-    private static final String RESULT_KEY = "RESULT_KEY";
+    private static final String PARCELABLE = "PARCELABLE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,15 +22,6 @@ public class MainActivity extends AppCompatActivity {
 
         displayTask = findViewById(R.id.display);
         displayResult = findViewById(R.id.result);
-
-        if (savedInstanceState == null) {
-            displayTask.setText("0");
-            displayResult.setText("0");
-
-        } else {
-            displayTask.setText(savedInstanceState.getString(TASK_KEY));
-            displayResult.setText(savedInstanceState.getString(RESULT_KEY));
-        }
 
         findViewById(R.id.b_one).setOnClickListener(view -> {
             task = task + "1";
@@ -48,7 +39,16 @@ public class MainActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.b_multiplication).setOnClickListener(view -> {
-            task = task + "*";
+            if (task.isEmpty()) {
+                task = "0x";
+            } else if ((task.charAt(task.length() - 1) == '+') ||
+                    (task.charAt(task.length() - 1) == '-') ||
+                    (task.charAt(task.length() - 1) == '÷') ||
+                    (task.charAt(task.length() - 1) == '.')) {
+                task = task.substring(0, task.length() - 1) + "x";
+            } else {
+                task = task + "*";
+            }
             displayTask.setText(task);
         });
 
@@ -68,7 +68,16 @@ public class MainActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.b_subtraction).setOnClickListener(view -> {
-            task = task + "-";
+            if (task.isEmpty()) {
+                task = "0-";
+            } else if ((task.charAt(task.length() - 1) == '+') ||
+                    (task.charAt(task.length() - 1) == 'x') ||
+                    (task.charAt(task.length() - 1) == '÷') ||
+                    (task.charAt(task.length() - 1) == '.')) {
+                task = task.substring(0, task.length() - 1) + "-";
+            } else {
+                task = task + "-";
+            }
             displayTask.setText(task);
         });
 
@@ -88,15 +97,24 @@ public class MainActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.b_addition).setOnClickListener(view -> {
-            task = task + "+";
+            if (task.isEmpty()) {
+                task = "0+";
+            } else if ((task.charAt(task.length() - 1) == '÷') ||
+                    (task.charAt(task.length() - 1) == '-') ||
+                    (task.charAt(task.length() - 1) == 'x') ||
+                    (task.charAt(task.length() - 1) == '.')) {
+                task = task.substring(0, task.length() - 1) + "+";
+            } else {
+                task = task + "+";
+            }
             displayTask.setText(task);
         });
 
         findViewById(R.id.b_dot).setOnClickListener(view -> {
-            if (task.isEmpty() || (task.charAt(task.length()-1) == '+') ||
-                    (task.charAt(task.length()-1) == '-') ||
-                    (task.charAt(task.length()-1) == 'x') ||
-                    (task.charAt(-task.length()-1) == '÷')) {
+            if (task.isEmpty() || (task.charAt(task.length() - 1) == '+') ||
+                    (task.charAt(task.length() - 1) == '-') ||
+                    (task.charAt(task.length() - 1) == 'x') ||
+                    (task.charAt(task.length() - 1) == '÷')) {
                 task = task + "0.";
             } else {
                 task = task + ".";
@@ -110,13 +128,22 @@ public class MainActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.b_division).setOnClickListener(view -> {
-            task = task + "÷";
+            if (task.isEmpty()) {
+                task = "0÷";
+            } else if ((task.charAt(task.length() - 1) == '+') ||
+                    (task.charAt(task.length() - 1) == '-') ||
+                    (task.charAt(task.length() - 1) == 'x') ||
+                    (task.charAt(task.length() - 1) == '.')) {
+                task = task.substring(0, task.length() - 1) + "÷";
+            } else {
+                task = task + "÷";
+            }
             displayTask.setText(task);
         });
 
         findViewById(R.id.b_clear).setOnClickListener(view -> {
             task = "";
-            result = "0";
+            result = "";
             displayTask.setText(task);
             displayResult.setText(result);
         });
@@ -131,7 +158,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.b_equals).setOnClickListener(view -> {
-            //TODO
+            Calculus cl = new Calculus(task);
+            Toast.makeText(getApplicationContext(), "Calculating...", Toast.LENGTH_SHORT).show();
             displayResult.setText(result);
         });
 
@@ -142,10 +170,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onSaveInstanceState(@NonNull Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putString(TASK_KEY, task);
-        outState.putString(RESULT_KEY, result);
+    protected void onSaveInstanceState(@NonNull Bundle instanceState) {
+        super.onSaveInstanceState(instanceState);
+        Displays display = new Displays(task, result);
+        instanceState.putParcelable(PARCELABLE, display);
 
     }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle instanceState) {
+        super.onRestoreInstanceState(instanceState);
+        Displays display = instanceState.getParcelable(PARCELABLE);
+        task = display.getTaskDisplay();
+        result = display.getResultDisplay();
+        displayTask.setText(task);
+        displayResult.setText(result);
+
+    }
+
 }
