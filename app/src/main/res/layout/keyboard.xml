@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="bottom"
     android:columnCount="4"
     android:paddingStart="@dimen/background_margin"
@@ -10,251 +10,119 @@
     android:paddingBottom="36dp">
 
     <com.google.android.material.button.MaterialButton
-        app:cornerRadius="@dimen/corner_radius"
         android:id="@+id/b_clear"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/PurpleStyleButtonsFunctionsPortrait"
         android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        android:layout_margin="@dimen/button_margin"
-        android:textSize="@dimen/text_size_button"
-        android:textColor="@color/indigo"
-        android:backgroundTint="@color/lavenderBlush"
-        android:text="@string/clear"/>
+        android:text="@string/clear" />
 
     <com.google.android.material.button.MaterialButton
-        app:cornerRadius="@dimen/corner_radius"
         android:id="@+id/b_backspace"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/PurpleStyleButtonsFunctionsPortrait"
         android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        android:layout_margin="@dimen/button_margin"
-        android:textSize="@dimen/text_size_button"
-        android:textColor="@color/indigo"
-        android:backgroundTint="@color/lavenderBlush"
-        android:text="@string/backspace"/>
+        android:text="@string/backspace" />
 
     <com.google.android.material.button.MaterialButton
-        app:cornerRadius="@dimen/corner_radius"
         android:id="@+id/b_percent"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/PurpleStyleButtonsFunctionsPortrait"
         android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        android:layout_margin="@dimen/button_margin"
-        android:textSize="@dimen/text_size_button"
-        android:textColor="@color/indigo"
-        android:backgroundTint="@color/lavenderBlush"
-        android:text="@string/percent"/>
+        android:text="@string/percent" />
 
     <com.google.android.material.button.MaterialButton
-        app:cornerRadius="@dimen/corner_radius"
         android:id="@+id/b_division"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/PurpleStyleButtonsFunctionsPortrait"
         android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        android:layout_margin="@dimen/button_margin"
-        android:textSize="@dimen/text_size_button"
-        android:textColor="@color/indigo"
-        android:backgroundTint="@color/lavenderBlush"
-        android:text="@string/division"/>
+        android:text="@string/division" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_seven"
-        app:cornerRadius="@dimen/corner_radius"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/PurpleStyleButtonsNumbersPortrait"
         android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        android:layout_margin="@dimen/button_margin"
-        android:textSize="@dimen/text_size_button"
-        android:textColor="@color/indigo"
-        android:backgroundTint="@color/lavender"
-        android:text="@string/b_seven"/>
+        android:text="@string/b_seven" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_eight"
-        app:cornerRadius="@dimen/corner_radius"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/PurpleStyleButtonsNumbersPortrait"
         android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        android:layout_margin="@dimen/button_margin"
-        android:textSize="@dimen/text_size_button"
-        android:textColor="@color/indigo"
-        android:backgroundTint="@color/lavender"
-        android:text="@string/b_eight"/>
+        android:text="@string/b_eight" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_nine"
-        app:cornerRadius="@dimen/corner_radius"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/PurpleStyleButtonsNumbersPortrait"
         android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        android:layout_margin="@dimen/button_margin"
-        android:textSize="@dimen/text_size_button"
-        android:textColor="@color/indigo"
-        android:backgroundTint="@color/lavender"
-        android:text="@string/b_nine"/>
+        android:text="@string/b_nine" />
 
     <com.google.android.material.button.MaterialButton
-        app:cornerRadius="@dimen/corner_radius"
         android:id="@+id/b_multiplication"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/PurpleStyleButtonsFunctionsPortrait"
         android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        android:layout_margin="@dimen/button_margin"
-        android:textSize="@dimen/text_size_button"
-        android:textColor="@color/indigo"
-        android:backgroundTint="@color/lavenderBlush"
-        android:text="@string/b_multiplication"/>
+        android:text="@string/b_multiplication" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_four"
-        app:cornerRadius="@dimen/corner_radius"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/PurpleStyleButtonsNumbersPortrait"
         android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        android:layout_margin="@dimen/button_margin"
-        android:textSize="@dimen/text_size_button"
-        android:textColor="@color/indigo"
-        android:backgroundTint="@color/lavender"
-        android:text="@string/b_four"/>
+        android:text="@string/b_four" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_five"
-        app:cornerRadius="@dimen/corner_radius"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/PurpleStyleButtonsNumbersPortrait"
         android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        android:layout_margin="@dimen/button_margin"
-        android:textSize="@dimen/text_size_button"
-        android:textColor="@color/indigo"
-        android:backgroundTint="@color/lavender"
-        android:text="@string/b_five"/>
+        android:text="@string/b_five" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_six"
-        app:cornerRadius="@dimen/corner_radius"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/PurpleStyleButtonsNumbersPortrait"
         android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        android:layout_margin="@dimen/button_margin"
-        android:textSize="@dimen/text_size_button"
-        android:textColor="@color/indigo"
-        android:backgroundTint="@color/lavender"
-        android:text="@string/b_six"/>
+        android:text="@string/b_six" />
 
     <com.google.android.material.button.MaterialButton
-        app:cornerRadius="@dimen/corner_radius"
         android:id="@+id/b_subtraction"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/PurpleStyleButtonsFunctionsPortrait"
         android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        android:layout_margin="@dimen/button_margin"
-        android:textSize="@dimen/text_size_button"
-        android:textColor="@color/indigo"
-        android:backgroundTint="@color/lavenderBlush"
-        android:text="@string/subtraction"/>
+        android:text="@string/subtraction" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_one"
-        app:cornerRadius="@dimen/corner_radius"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/PurpleStyleButtonsNumbersPortrait"
         android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        android:layout_margin="@dimen/button_margin"
-        android:textSize="@dimen/text_size_button"
-        android:textColor="@color/indigo"
-        android:backgroundTint="@color/lavender"
-        android:text="@string/b_one"/>
+        android:text="@string/b_one" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_two"
-        app:cornerRadius="@dimen/corner_radius"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/PurpleStyleButtonsNumbersPortrait"
         android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        android:layout_margin="@dimen/button_margin"
-        android:textSize="@dimen/text_size_button"
-        android:textColor="@color/indigo"
-        android:backgroundTint="@color/lavender"
-        android:text="@string/b_two"/>
+        android:text="@string/b_two" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_tree"
-        app:cornerRadius="@dimen/corner_radius"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/PurpleStyleButtonsNumbersPortrait"
         android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        android:layout_margin="@dimen/button_margin"
-        android:textSize="@dimen/text_size_button"
-        android:textColor="@color/indigo"
-        android:backgroundTint="@color/lavender"
-        android:text="@string/b_three"/>
+        android:text="@string/b_three" />
 
     <com.google.android.material.button.MaterialButton
-        app:cornerRadius="@dimen/corner_radius"
         android:id="@+id/b_addition"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/PurpleStyleButtonsFunctionsPortrait"
         android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        android:layout_margin="@dimen/button_margin"
-        android:textSize="@dimen/text_size_button"
-        android:textColor="@color/indigo"
-        android:backgroundTint="@color/lavenderBlush"
-        android:text="@string/addition"/>
+        android:text="@string/addition" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_zero"
-        app:cornerRadius="@dimen/corner_radius"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/PurpleStyleButtonsNumbersPortrait"
         android:layout_columnSpan="2"
-        android:layout_gravity="fill"
-        android:layout_margin="@dimen/button_margin"
-        android:textSize="@dimen/text_size_button"
-        android:textColor="@color/indigo"
-        android:backgroundTint="@color/lavender"
-        android:text="@string/b_zero"/>
+        android:layout_columnWeight="1"
+        android:text="@string/b_zero" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_dot"
-        android:layout_width="0dp"
-        app:cornerRadius="@dimen/corner_radius"
-        android:layout_height="wrap_content"
+        style="@style/PurpleStyleButtonsNumbersPortrait"
         android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        android:layout_margin="@dimen/button_margin"
-        android:textSize="@dimen/text_size_button"
-        android:textColor="@color/indigo"
-        android:backgroundTint="@color/lavender"
-        android:text="@string/b_dot"/>
+        android:text="@string/b_dot" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_equals"
-        app:cornerRadius="@dimen/corner_radius"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/PurpleStyleButtonsFunctionsPortrait"
         android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        android:layout_margin="@dimen/button_margin"
-        android:textSize="@dimen/text_size_button"
-        android:textColor="@color/indigo"
-        android:backgroundTint="@color/lavenderBlush"
-        android:text="@string/b_equals"/>
+        android:text="@string/b_equals" />
 
 
 </GridLayout>

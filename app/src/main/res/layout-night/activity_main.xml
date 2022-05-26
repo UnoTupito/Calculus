@@ -12,7 +12,7 @@
         android:text="@string/b_zero"
         android:background="@color/lavenderBlush"
         android:layout_height="wrap_content"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:padding="@dimen/background_padding"
         android:layout_marginBottom="@dimen/background_margin"
         android:textColor="@color/indigo"
