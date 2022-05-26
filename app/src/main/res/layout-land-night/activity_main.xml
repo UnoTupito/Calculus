@@ -4,33 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/background_night_land">
+    android:background="@drawable/background_night_land"
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/display"
+        style="@style/DisplaysNight"
+        android:background="@color/darkSlateBlue"
         android:text="@string/b_zero"
-        android:background="@color/lavenderBlush"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:padding="@dimen/background_padding_land"
-        android:layout_marginBottom="@dimen/background_margin_land"
-        android:textColor="@color/indigo"
         android:textSize="@dimen/text_size_display_land"
+        app:layout_constraintBottom_toTopOf="@id/result"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/result"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/result"
+        style="@style/DisplaysNight"
+        android:background="@color/midnightBlue"
         android:text="@string/result"
-        android:background="@color/lavender"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:padding="@dimen/background_padding_land"
-        android:textColor="@color/indigo"
+        android:textColor="@color/oldLace"
         android:textSize="@dimen/text_size_display_result_land"
-        app:layout_constraintBottom_toTopOf="@id/keyboard"/>
+        app:layout_constraintBottom_toTopOf="@id/keyboard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <include
         android:id="@+id/keyboard"

@@ -15,8 +15,8 @@
     <dimen name="text_size_button_land">18sp</dimen>
 
     <dimen name="text_size_display">32sp</dimen>
-    <dimen name="text_size_display_land">24sp</dimen>
+    <dimen name="text_size_display_land">28sp</dimen>
 
     <dimen name="text_size_display_result">28sp</dimen>
-    <dimen name="text_size_display_result_land">22sp</dimen>
+    <dimen name="text_size_display_result_land">24sp</dimen>
 </resources>

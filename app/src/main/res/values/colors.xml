@@ -10,4 +10,7 @@
     <color name="lavender">#E6E6FA</color>
     <color name="indigo">#4B0082</color>
     <color name="lavenderBlush">#FFF0F5</color>
+    <color name="darkSlateBlue">#483D8B</color>
+    <color name="midnightBlue">#191970</color>
+    <color name="oldLace">#FDF5E6</color>
 </resources>
