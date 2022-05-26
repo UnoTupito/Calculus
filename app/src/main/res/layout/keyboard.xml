@@ -7,7 +7,7 @@
     android:columnCount="4"
     android:paddingStart="@dimen/background_margin"
     android:paddingEnd="@dimen/background_margin"
-    android:paddingBottom="36dp">
+    android:paddingBottom="@dimen/keyboard_paddingBottom_portrait">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_clear"

@@ -19,4 +19,5 @@
 
     <dimen name="text_size_display_result">28sp</dimen>
     <dimen name="text_size_display_result_land">24sp</dimen>
+    <dimen name="keyboard_paddingBottom_portrait">36dp</dimen>
 </resources>

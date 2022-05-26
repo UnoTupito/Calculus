@@ -24,8 +24,8 @@
         android:text="@string/result"
         android:textSize="@dimen/text_size_display_result"
         app:layout_constraintBottom_toTopOf="@id/keyboard"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <include
         android:id="@+id/keyboard"
