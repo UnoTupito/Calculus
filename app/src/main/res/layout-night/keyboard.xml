@@ -11,116 +11,116 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_clear"
-        style="@style/PurpleStyleButtonsFunctionsPortraitNight"
+        style="@style/PurpleStyleButtonsFunctionsPortrait"
         android:layout_columnWeight="1"
         android:text="@string/clear" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_backspace"
-        style="@style/PurpleStyleButtonsFunctionsPortraitNight"
+        style="@style/PurpleStyleButtonsFunctionsPortrait"
         android:layout_columnWeight="1"
         android:text="@string/backspace" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_percent"
-        style="@style/PurpleStyleButtonsFunctionsPortraitNight"
+        style="@style/PurpleStyleButtonsFunctionsPortrait"
         android:layout_columnWeight="1"
         android:text="@string/percent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_division"
-        style="@style/PurpleStyleButtonsFunctionsPortraitNight"
+        style="@style/PurpleStyleButtonsFunctionsPortrait"
         android:layout_columnWeight="1"
         android:text="@string/division" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_seven"
-        style="@style/PurpleStyleButtonsNumbersPortraitNight"
+        style="@style/PurpleStyleButtonsNumbersPortrait"
         android:layout_columnWeight="1"
         android:text="@string/b_seven" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_eight"
-        style="@style/PurpleStyleButtonsNumbersPortraitNight"
+        style="@style/PurpleStyleButtonsNumbersPortrait"
         android:layout_columnWeight="1"
         android:text="@string/b_eight" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_nine"
-        style="@style/PurpleStyleButtonsNumbersPortraitNight"
+        style="@style/PurpleStyleButtonsNumbersPortrait"
         android:layout_columnWeight="1"
         android:text="@string/b_nine" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_multiplication"
-        style="@style/PurpleStyleButtonsFunctionsPortraitNight"
+        style="@style/PurpleStyleButtonsFunctionsPortrait"
         android:layout_columnWeight="1"
         android:text="@string/b_multiplication" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_four"
-        style="@style/PurpleStyleButtonsNumbersPortraitNight"
+        style="@style/PurpleStyleButtonsNumbersPortrait"
         android:layout_columnWeight="1"
         android:text="@string/b_four" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_five"
-        style="@style/PurpleStyleButtonsNumbersPortraitNight"
+        style="@style/PurpleStyleButtonsNumbersPortrait"
         android:layout_columnWeight="1"
         android:text="@string/b_five" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_six"
-        style="@style/PurpleStyleButtonsNumbersPortraitNight"
+        style="@style/PurpleStyleButtonsNumbersPortrait"
         android:layout_columnWeight="1"
         android:text="@string/b_six" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_subtraction"
-        style="@style/PurpleStyleButtonsFunctionsPortraitNight"
+        style="@style/PurpleStyleButtonsFunctionsPortrait"
         android:layout_columnWeight="1"
         android:text="@string/subtraction" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_one"
-        style="@style/PurpleStyleButtonsNumbersPortraitNight"
+        style="@style/PurpleStyleButtonsNumbersPortrait"
         android:layout_columnWeight="1"
         android:text="@string/b_one" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_two"
-        style="@style/PurpleStyleButtonsNumbersPortraitNight"
+        style="@style/PurpleStyleButtonsNumbersPortrait"
         android:layout_columnWeight="1"
         android:text="@string/b_two" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_tree"
-        style="@style/PurpleStyleButtonsNumbersPortraitNight"
+        style="@style/PurpleStyleButtonsNumbersPortrait"
         android:layout_columnWeight="1"
         android:text="@string/b_three" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_addition"
-        style="@style/PurpleStyleButtonsFunctionsPortraitNight"
+        style="@style/PurpleStyleButtonsFunctionsPortrait"
         android:layout_columnWeight="1"
         android:text="@string/addition" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_zero"
-        style="@style/PurpleStyleButtonsNumbersPortraitNight"
+        style="@style/PurpleStyleButtonsNumbersPortrait"
         android:layout_columnSpan="2"
         android:layout_columnWeight="1"
         android:text="@string/b_zero" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_dot"
-        style="@style/PurpleStyleButtonsNumbersPortraitNight"
+        style="@style/PurpleStyleButtonsNumbersPortrait"
         android:layout_columnWeight="1"
         android:text="@string/b_dot" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_equals"
-        style="@style/PurpleStyleButtonsFunctionsPortraitNight"
+        style="@style/PurpleStyleButtonsFunctionsPortrait"
         android:layout_columnWeight="1"
         android:text="@string/b_equals" />
 

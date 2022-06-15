@@ -5,11 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    >
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/night_mode"
+        android:background="@color/lavenderBlush"
+        app:thumbTint="@color/lavenderBlush"
+        />
+
 
     <TextView
         android:id="@+id/display"
-        style="@style/DisplaysDay"
+        style="@style/Displays"
         android:background="@color/lavenderBlush"
         android:text="@string/b_zero"
         android:textSize="@dimen/text_size_display"
@@ -19,7 +31,7 @@
 
     <TextView
         android:id="@+id/result"
-        style="@style/DisplaysDay"
+        style="@style/Displays"
         android:background="@color/lavender"
         android:text="@string/result"
         android:textSize="@dimen/text_size_display_result"

@@ -9,7 +9,7 @@
 
     <TextView
         android:id="@+id/display"
-        style="@style/DisplaysDay"
+        style="@style/Displays"
         android:background="@color/lavenderBlush"
         android:text="@string/b_zero"
         android:textSize="@dimen/text_size_display_land"
@@ -19,7 +19,7 @@
 
     <TextView
         android:id="@+id/result"
-        style="@style/DisplaysDay"
+        style="@style/Displays"
         android:background="@color/lavender"
         android:text="@string/result"
         android:textSize="@dimen/text_size_display_result_land"
