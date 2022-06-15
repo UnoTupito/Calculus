@@ -7,6 +7,17 @@
     android:background="@drawable/background_night"
     tools:context=".MainActivity">
 
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchNightMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/night_mode"
+        android:background="@color/darkSlateBlue"
+        app:thumbTint="@color/darkSlateBlue"
+        />
+
     <TextView
         android:id="@+id/display"
         style="@style/Displays"

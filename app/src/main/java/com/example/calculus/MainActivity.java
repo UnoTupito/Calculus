@@ -2,8 +2,13 @@ package com.example.calculus;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.SwitchCompat;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -11,17 +16,45 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView displayTask;
     private TextView displayResult;
+    private SwitchCompat nightSwitch;
     private String task = "";
     private String result = "";
+
+
     private static final String PARCELABLE = "PARCELABLE";
+    private static final String MY_PREFERENCES = "NightModePref";
+    private static final String KEY_ISNIGHTMODE = "IsNightMode";
+    SharedPreferences sharedPreferences;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        sharedPreferences = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
+
+        nightSwitch = findViewById(R.id.switchNightMode);
+
+        NightModeIsActivated();
 
         displayTask = findViewById(R.id.display);
         displayResult = findViewById(R.id.result);
+
+        nightSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    saveNightModeState(true);
+                    recreate();
+                } else {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    saveNightModeState(false);
+                    recreate();
+                }
+            }
+        });
+
 
         findViewById(R.id.b_one).setOnClickListener(view -> {
             task = task + "1";
@@ -169,12 +202,26 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void saveNightModeState(boolean nightMode) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean(KEY_ISNIGHTMODE, nightMode);
+        editor.apply();
+    }
+    public void NightModeIsActivated(){
+        if(sharedPreferences.getBoolean(KEY_ISNIGHTMODE, false)){
+            nightSwitch.setChecked(true);
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else {
+            nightSwitch.setChecked(false);
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
+    }
+
     @Override
     protected void onSaveInstanceState(@NonNull Bundle instanceState) {
         super.onSaveInstanceState(instanceState);
         Displays display = new Displays(task, result);
         instanceState.putParcelable(PARCELABLE, display);
-
     }
 
     @Override
@@ -185,7 +232,6 @@ public class MainActivity extends AppCompatActivity {
         result = display.getResultDisplay();
         displayTask.setText(task);
         displayResult.setText(result);
-
     }
 
 }
