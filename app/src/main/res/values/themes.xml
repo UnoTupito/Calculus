@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Calculus" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.Calculus" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/indigo</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -13,4 +13,67 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="PurpleStyleButtonsNumbersPortrait">
+        <item name="cornerRadius">@dimen/corner_radius</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">fill</item>
+        <item name="android:layout_margin">@dimen/button_margin</item>
+        <item name="android:textSize">@dimen/text_size_button</item>
+        <item name="android:textColor">@color/indigo</item>
+        <item name="backgroundTint">@color/lavender</item>
+    </style>
+
+    <style name="PurpleStyleButtonsNumbersLand">
+        <item name="cornerRadius">@dimen/corner_radius</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">fill</item>
+        <item name="android:layout_margin">@dimen/button_margin_land</item>
+        <item name="android:textSize">@dimen/text_size_button_land</item>
+        <item name="android:textColor">@color/indigo</item>
+        <item name="backgroundTint">@color/lavender</item>
+    </style>
+
+    <style name="PurpleStyleButtonsFunctionsPortrait">
+        <item name="cornerRadius">@dimen/corner_radius</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">fill</item>
+        <item name="android:layout_margin">@dimen/button_margin</item>
+        <item name="android:textSize">@dimen/text_size_button</item>
+        <item name="android:textColor">@color/indigo</item>
+        <item name="backgroundTint">@color/lavenderBlush</item>
+    </style>
+
+    <style name="PurpleStyleButtonsFunctionsLand">
+        <item name="cornerRadius">@dimen/corner_radius</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">fill</item>
+        <item name="android:layout_margin">@dimen/button_margin_land</item>
+        <item name="android:textSize">@dimen/text_size_button_land</item>
+        <item name="android:textColor">@color/indigo</item>
+        <item name="backgroundTint">@color/lavenderBlush</item>
+    </style>
+
+    <style name="DisplaysPortrait">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">fill</item>
+        <item name="android:layout_marginBottom">@dimen/background_padding</item>
+        <item name="android:paddingStart">@dimen/background_padding</item>
+        <item name="android:textColor">@color/indigo</item>
+    </style>
+
+    <style name="Displays">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">fill</item>
+        <item name="android:layout_marginBottom">@dimen/background_padding</item>
+        <item name="android:padding">@dimen/background_padding</item>
+        <item name="android:textColor">@color/indigo</item>
+    </style>
+
 </resources>

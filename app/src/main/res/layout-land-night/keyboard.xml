@@ -73,7 +73,6 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/b_zero"
             style="@style/PurpleStyleButtonsNumbersLand"
-
             android:layout_columnSpan="2"
             android:text="@string/b_zero" />
 
@@ -97,16 +96,9 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/b_clear"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/PurpleStyleButtonsFunctionsLand"
             android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:layout_margin="@dimen/button_margin_land"
-            android:backgroundTint="@color/lavenderBlush"
-            android:text="@string/clear"
-            android:textColor="@color/indigo"
-            android:textSize="@dimen/text_size_button_land"
-            app:cornerRadius="@dimen/corner_radius" />
+            android:text="@string/clear" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/b_backspace"

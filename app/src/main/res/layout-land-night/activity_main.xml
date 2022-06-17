@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
-    tools:context=".MainActivity"
-    >
+    android:background="@drawable/background_night_land"
+    tools:context=".MainActivity">
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/switchNightMode"
@@ -15,17 +14,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:text="@string/night_mode"
-        android:background="@color/lavenderBlush"
-        app:thumbTint="@color/lavenderBlush"
+        android:background="@color/darkSlateBlue"
+        app:thumbTint="@color/darkSlateBlue"
         />
-
 
     <TextView
         android:id="@+id/display"
         style="@style/Displays"
-        android:background="@color/lavenderBlush"
+        android:background="@color/darkSlateBlue"
         android:text="@string/b_zero"
-        android:textSize="@dimen/text_size_display"
+        android:textSize="@dimen/text_size_display_land"
         app:layout_constraintBottom_toTopOf="@id/result"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -33,9 +31,10 @@
     <TextView
         android:id="@+id/result"
         style="@style/Displays"
-        android:background="@color/lavender"
+        android:background="@color/midnightBlue"
         android:text="@string/result"
-        android:textSize="@dimen/text_size_display_result"
+        android:textColor="@color/oldLace"
+        android:textSize="@dimen/text_size_display_result_land"
         app:layout_constraintBottom_toTopOf="@id/keyboard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

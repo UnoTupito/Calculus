@@ -4,11 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/tvmam/AndroidStudioProjects/Calculus/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
-        <entry key="..\:/Users/tvmam/AndroidStudioProjects/Calculus/app/src/main/res/layout-land/activity_main.xml" value="0.21516754850088182" />
+        <entry key="..\:/Users/tvmam/AndroidStudioProjects/Calculus/app/src/main/res/layout-land-night/activity_main.xml" value="0.21164021164021163" />
+        <entry key="..\:/Users/tvmam/AndroidStudioProjects/Calculus/app/src/main/res/layout-land-night/keyboard.xml" value="0.21164021164021163" />
+        <entry key="..\:/Users/tvmam/AndroidStudioProjects/Calculus/app/src/main/res/layout-land/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/tvmam/AndroidStudioProjects/Calculus/app/src/main/res/layout-land/kayboard_land_numbers.xml" value="0.21516754850088182" />
         <entry key="..\:/Users/tvmam/AndroidStudioProjects/Calculus/app/src/main/res/layout-land/keyboard.xml" value="0.176" />
         <entry key="..\:/Users/tvmam/AndroidStudioProjects/Calculus/app/src/main/res/layout-land/keyboard_land_numbers.xml" value="0.19400352733686066" />
-        <entry key="..\:/Users/tvmam/AndroidStudioProjects/Calculus/app/src/main/res/layout/activity_main.xml" value="0.1503623188405797" />
+        <entry key="..\:/Users/tvmam/AndroidStudioProjects/Calculus/app/src/main/res/layout-night/activity_main.xml" value="0.1956521739130435" />
+        <entry key="..\:/Users/tvmam/AndroidStudioProjects/Calculus/app/src/main/res/layout-night/keyboard.xml" value="0.25" />
+        <entry key="..\:/Users/tvmam/AndroidStudioProjects/Calculus/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/tvmam/AndroidStudioProjects/Calculus/app/src/main/res/layout/keyboard.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/tvmam/AndroidStudioProjects/Calculus/app/src/main/res/layout/keyboard_land_numbers.xml" value="0.25416666666666665" />
       </map>

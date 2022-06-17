@@ -7,7 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="lavender">#E6E6FA</color>
+    <color name="lavender">#D9E6E6FA</color>
     <color name="indigo">#4B0082</color>
-    <color name="lavenderBlush">#FFF0F5</color>
+    <color name="lavenderBlush">#D9FFF0F5</color>
+    <color name="darkSlateBlue">#D9483D8B</color>
+    <color name="midnightBlue">#D9191970</color>
+    <color name="oldLace">#FDF5E6</color>
 </resources>
