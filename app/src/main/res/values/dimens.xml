@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="background_margin">8dp</dimen>
+    <dimen name="background_margin_land">4dp</dimen>
+
     <dimen name="background_padding">8dp</dimen>
+    <dimen name="background_padding_land">4dp</dimen>
+
     <dimen name="button_margin">4dp</dimen>
+    <dimen name="button_margin_land">2dp</dimen>
+
     <dimen name="corner_radius">12dp</dimen>
+
     <dimen name="text_size_button">24sp</dimen>
+    <dimen name="text_size_button_land">18sp</dimen>
+
     <dimen name="text_size_display">32sp</dimen>
+    <dimen name="text_size_display_land">24sp</dimen>
+
     <dimen name="text_size_display_result">28sp</dimen>
+    <dimen name="text_size_display_result_land">22sp</dimen>
 </resources>
