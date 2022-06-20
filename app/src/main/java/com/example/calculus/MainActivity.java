@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private SwitchCompat nightSwitch;
     private String task = "";
     private String result = "";
+    private final String[] ACTIONS = new String[] {"+", "-", "x", "÷"};
 
 
     private static final String PARCELABLE = "PARCELABLE";
@@ -71,20 +72,6 @@ public class MainActivity extends AppCompatActivity {
             displayTask.setText(task);
         });
 
-        findViewById(R.id.b_multiplication).setOnClickListener(view -> {
-            if (task.isEmpty()) {
-                task = "0x";
-            } else if ((task.charAt(task.length() - 1) == '+') ||
-                    (task.charAt(task.length() - 1) == '-') ||
-                    (task.charAt(task.length() - 1) == '÷') ||
-                    (task.charAt(task.length() - 1) == '.')) {
-                task = task.substring(0, task.length() - 1) + "x";
-            } else {
-                task = task + "*";
-            }
-            displayTask.setText(task);
-        });
-
         findViewById(R.id.b_four).setOnClickListener(view -> {
             task = task + "4";
             displayTask.setText(task);
@@ -97,20 +84,6 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.b_six).setOnClickListener(view -> {
             task = task + "6";
-            displayTask.setText(task);
-        });
-
-        findViewById(R.id.b_subtraction).setOnClickListener(view -> {
-            if (task.isEmpty()) {
-                task = "0-";
-            } else if ((task.charAt(task.length() - 1) == '+') ||
-                    (task.charAt(task.length() - 1) == 'x') ||
-                    (task.charAt(task.length() - 1) == '÷') ||
-                    (task.charAt(task.length() - 1) == '.')) {
-                task = task.substring(0, task.length() - 1) + "-";
-            } else {
-                task = task + "-";
-            }
             displayTask.setText(task);
         });
 
@@ -129,22 +102,21 @@ public class MainActivity extends AppCompatActivity {
             displayTask.setText(task);
         });
 
-        findViewById(R.id.b_addition).setOnClickListener(view -> {
-            if (task.isEmpty()) {
-                task = "0+";
-            } else if ((task.charAt(task.length() - 1) == '÷') ||
-                    (task.charAt(task.length() - 1) == '-') ||
-                    (task.charAt(task.length() - 1) == 'x') ||
-                    (task.charAt(task.length() - 1) == '.')) {
-                task = task.substring(0, task.length() - 1) + "+";
-            } else {
-                task = task + "+";
-            }
+        findViewById(R.id.b_zero).setOnClickListener(view -> {
+            task = task + "0";
             displayTask.setText(task);
         });
 
         findViewById(R.id.b_dot).setOnClickListener(view -> {
-            if (task.isEmpty() || (task.charAt(task.length() - 1) == '+') ||
+            if (!hasActionSign(task)){
+                if (task.isEmpty()){
+                    task = task + "0.";
+                } else if (task.contains(".")){
+                    Toast.makeText(getApplicationContext(), "Your number already has a dot", Toast.LENGTH_SHORT).show();
+                } else {
+                    task = task + ".";
+                }
+            } else if ((task.charAt(task.length() - 1) == '+') ||
                     (task.charAt(task.length() - 1) == '-') ||
                     (task.charAt(task.length() - 1) == 'x') ||
                     (task.charAt(task.length() - 1) == '÷')) {
@@ -155,8 +127,51 @@ public class MainActivity extends AppCompatActivity {
             displayTask.setText(task);
         });
 
-        findViewById(R.id.b_zero).setOnClickListener(view -> {
-            task = task + "0";
+        findViewById(R.id.b_addition).setOnClickListener(view -> {
+            if (task.isEmpty()) {
+                task = "0+";
+            } else if((task.charAt(task.length() - 1) == '÷') ||
+                    (task.charAt(task.length() - 1) == '-') ||
+                    (task.charAt(task.length() - 1) == 'x') ||
+                    (task.charAt(task.length() - 1) == '.')){
+                task = task.substring(0, task.length() - 1) + "+";
+            } else if (hasActionSign(task)){
+                Toast.makeText(getApplicationContext(), "Only one action a time, sorry", Toast.LENGTH_SHORT).show();
+            } else {
+                task = task + "+";
+            }
+            displayTask.setText(task);
+        });
+
+        findViewById(R.id.b_subtraction).setOnClickListener(view -> {
+            if (task.isEmpty()) {
+                task = "0-";
+            } else if ((task.charAt(task.length() - 1) == '+') ||
+                    (task.charAt(task.length() - 1) == 'x') ||
+                    (task.charAt(task.length() - 1) == '÷') ||
+                    (task.charAt(task.length() - 1) == '.')) {
+                task = task.substring(0, task.length() - 1) + "-";
+            } else if (hasActionSign(task)){
+                Toast.makeText(getApplicationContext(), "Only one action a time, sorry", Toast.LENGTH_SHORT).show();
+            }else {
+                task = task + "-";
+            }
+            displayTask.setText(task);
+        });
+
+        findViewById(R.id.b_multiplication).setOnClickListener(view -> {
+            if (task.isEmpty()) {
+                task = "0x";
+            } else if ((task.charAt(task.length() - 1) == '+') ||
+                    (task.charAt(task.length() - 1) == '-') ||
+                    (task.charAt(task.length() - 1) == '÷') ||
+                    (task.charAt(task.length() - 1) == '.')) {
+                task = task.substring(0, task.length() - 1) + "x";
+            } else if (hasActionSign(task)){
+                Toast.makeText(getApplicationContext(), "Only one action a time, sorry", Toast.LENGTH_SHORT).show();
+            }else {
+                task = task + "x";
+            }
             displayTask.setText(task);
         });
 
@@ -168,7 +183,9 @@ public class MainActivity extends AppCompatActivity {
                     (task.charAt(task.length() - 1) == 'x') ||
                     (task.charAt(task.length() - 1) == '.')) {
                 task = task.substring(0, task.length() - 1) + "÷";
-            } else {
+            } else if (hasActionSign(task)){
+                Toast.makeText(getApplicationContext(), "Only one action a time, sorry", Toast.LENGTH_SHORT).show();
+            }else {
                 task = task + "÷";
             }
             displayTask.setText(task);
@@ -191,15 +208,27 @@ public class MainActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.b_equals).setOnClickListener(view -> {
-            Calculus cl = new Calculus(task);
-            Toast.makeText(getApplicationContext(), "Calculating...", Toast.LENGTH_SHORT).show();
+            if (!hasActionSign(task)) {
+                Toast.makeText(getApplicationContext(), "There is no problem", Toast.LENGTH_SHORT).show();
+            } else {
+                Calculus cl = new Calculus(task);
+                result = cl.Calculate(task);
+                displayResult.setText(result);
+                Toast.makeText(getApplicationContext(), "Calculating...", Toast.LENGTH_SHORT).show();
+            }
             displayResult.setText(result);
         });
 
         findViewById(R.id.b_percent).setOnClickListener(view -> {
-            //TODO;
+            Calculus cl = new Calculus(task);
+            task = cl.Percent(task);
+            displayTask.setText(task);
             displayTask.setText(task);
         });
+    }
+
+    boolean hasActionSign(String task){
+        return (task.contains("+") || task.contains("-") || task.contains("x") || task.contains("÷"));
     }
 
     private void saveNightModeState(boolean nightMode) {
