@@ -6,8 +6,11 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.SwitchCompat;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,9 +19,10 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView displayTask;
     private TextView displayResult;
-    private SwitchCompat nightSwitch;
+    private Button buttonTheme;
     private String task = "";
     private String result = "";
+    private final String[] ACTIONS = new String[] {"+", "-", "x", "÷"};
 
 
     private static final String PARCELABLE = "PARCELABLE";
@@ -31,30 +35,23 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        sharedPreferences = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
 
-        nightSwitch = findViewById(R.id.switchNightMode);
 
-        NightModeIsActivated();
+
 
         displayTask = findViewById(R.id.display);
         displayResult = findViewById(R.id.result);
 
-        nightSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+
+        buttonTheme = findViewById(R.id.b_theme);
+        buttonTheme.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b) {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                    saveNightModeState(true);
-                    recreate();
-                } else {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                    saveNightModeState(false);
-                    recreate();
-                }
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ThemeChooser.class);
+                startActivity(intent);
             }
         });
-
 
         findViewById(R.id.b_one).setOnClickListener(view -> {
             task = task + "1";
@@ -68,20 +65,6 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.b_tree).setOnClickListener(view -> {
             task = task + "3";
-            displayTask.setText(task);
-        });
-
-        findViewById(R.id.b_multiplication).setOnClickListener(view -> {
-            if (task.isEmpty()) {
-                task = "0x";
-            } else if ((task.charAt(task.length() - 1) == '+') ||
-                    (task.charAt(task.length() - 1) == '-') ||
-                    (task.charAt(task.length() - 1) == '÷') ||
-                    (task.charAt(task.length() - 1) == '.')) {
-                task = task.substring(0, task.length() - 1) + "x";
-            } else {
-                task = task + "*";
-            }
             displayTask.setText(task);
         });
 
@@ -100,20 +83,6 @@ public class MainActivity extends AppCompatActivity {
             displayTask.setText(task);
         });
 
-        findViewById(R.id.b_subtraction).setOnClickListener(view -> {
-            if (task.isEmpty()) {
-                task = "0-";
-            } else if ((task.charAt(task.length() - 1) == '+') ||
-                    (task.charAt(task.length() - 1) == 'x') ||
-                    (task.charAt(task.length() - 1) == '÷') ||
-                    (task.charAt(task.length() - 1) == '.')) {
-                task = task.substring(0, task.length() - 1) + "-";
-            } else {
-                task = task + "-";
-            }
-            displayTask.setText(task);
-        });
-
         findViewById(R.id.b_seven).setOnClickListener(view -> {
             task = task + "7";
             displayTask.setText(task);
@@ -129,22 +98,21 @@ public class MainActivity extends AppCompatActivity {
             displayTask.setText(task);
         });
 
-        findViewById(R.id.b_addition).setOnClickListener(view -> {
-            if (task.isEmpty()) {
-                task = "0+";
-            } else if ((task.charAt(task.length() - 1) == '÷') ||
-                    (task.charAt(task.length() - 1) == '-') ||
-                    (task.charAt(task.length() - 1) == 'x') ||
-                    (task.charAt(task.length() - 1) == '.')) {
-                task = task.substring(0, task.length() - 1) + "+";
-            } else {
-                task = task + "+";
-            }
+        findViewById(R.id.b_zero).setOnClickListener(view -> {
+            task = task + "0";
             displayTask.setText(task);
         });
 
         findViewById(R.id.b_dot).setOnClickListener(view -> {
-            if (task.isEmpty() || (task.charAt(task.length() - 1) == '+') ||
+            if (!hasActionSign(task)){
+                if (task.isEmpty()){
+                    task = task + "0.";
+                } else if (task.contains(".")){
+                    Toast.makeText(getApplicationContext(), R.string.one_dot, Toast.LENGTH_SHORT).show();
+                } else {
+                    task = task + ".";
+                }
+            } else if ((task.charAt(task.length() - 1) == '+') ||
                     (task.charAt(task.length() - 1) == '-') ||
                     (task.charAt(task.length() - 1) == 'x') ||
                     (task.charAt(task.length() - 1) == '÷')) {
@@ -155,8 +123,51 @@ public class MainActivity extends AppCompatActivity {
             displayTask.setText(task);
         });
 
-        findViewById(R.id.b_zero).setOnClickListener(view -> {
-            task = task + "0";
+        findViewById(R.id.b_addition).setOnClickListener(view -> {
+            if (task.isEmpty()) {
+                task = "0+";
+            } else if((task.charAt(task.length() - 1) == '÷') ||
+                    (task.charAt(task.length() - 1) == '-') ||
+                    (task.charAt(task.length() - 1) == 'x') ||
+                    (task.charAt(task.length() - 1) == '.')){
+                task = task.substring(0, task.length() - 1) + "+";
+            } else if (hasActionSign(task)){
+                Toast.makeText(getApplicationContext(), R.string.one_action, Toast.LENGTH_SHORT).show();
+            } else {
+                task = task + "+";
+            }
+            displayTask.setText(task);
+        });
+
+        findViewById(R.id.b_subtraction).setOnClickListener(view -> {
+            if (task.isEmpty()) {
+                task = "0-";
+            } else if ((task.charAt(task.length() - 1) == '+') ||
+                    (task.charAt(task.length() - 1) == 'x') ||
+                    (task.charAt(task.length() - 1) == '÷') ||
+                    (task.charAt(task.length() - 1) == '.')) {
+                task = task.substring(0, task.length() - 1) + "-";
+            } else if (hasActionSign(task)){
+                Toast.makeText(getApplicationContext(), R.string.one_action, Toast.LENGTH_SHORT).show();
+            }else {
+                task = task + "-";
+            }
+            displayTask.setText(task);
+        });
+
+        findViewById(R.id.b_multiplication).setOnClickListener(view -> {
+            if (task.isEmpty()) {
+                task = "0x";
+            } else if ((task.charAt(task.length() - 1) == '+') ||
+                    (task.charAt(task.length() - 1) == '-') ||
+                    (task.charAt(task.length() - 1) == '÷') ||
+                    (task.charAt(task.length() - 1) == '.')) {
+                task = task.substring(0, task.length() - 1) + "x";
+            } else if (hasActionSign(task)){
+                Toast.makeText(getApplicationContext(), R.string.one_action, Toast.LENGTH_SHORT).show();
+            }else {
+                task = task + "x";
+            }
             displayTask.setText(task);
         });
 
@@ -168,7 +179,9 @@ public class MainActivity extends AppCompatActivity {
                     (task.charAt(task.length() - 1) == 'x') ||
                     (task.charAt(task.length() - 1) == '.')) {
                 task = task.substring(0, task.length() - 1) + "÷";
-            } else {
+            } else if (hasActionSign(task)){
+                Toast.makeText(getApplicationContext(), R.string.one_action, Toast.LENGTH_SHORT).show();
+            }else {
                 task = task + "÷";
             }
             displayTask.setText(task);
@@ -191,31 +204,30 @@ public class MainActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.b_equals).setOnClickListener(view -> {
-            Calculus cl = new Calculus(task);
-            Toast.makeText(getApplicationContext(), "Calculating...", Toast.LENGTH_SHORT).show();
+            if (!hasActionSign(task)) {
+                Toast.makeText(getApplicationContext(), R.string.no_problem, Toast.LENGTH_SHORT).show();
+            } else {
+                Calculus cl = new Calculus(task);
+                result = cl.Calculate(task);
+                displayResult.setText(result);
+            }
             displayResult.setText(result);
         });
 
         findViewById(R.id.b_percent).setOnClickListener(view -> {
-            //TODO;
+            Calculus cl = new Calculus(task);
+            task = cl.Percent(task);
+            displayTask.setText(task);
             displayTask.setText(task);
         });
     }
 
-    private void saveNightModeState(boolean nightMode) {
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putBoolean(KEY_ISNIGHTMODE, nightMode);
-        editor.apply();
+    boolean hasActionSign(String task){
+        return (task.contains("+") || task.contains("-") || task.contains("x") || task.contains("÷"));
     }
-    public void NightModeIsActivated(){
-        if(sharedPreferences.getBoolean(KEY_ISNIGHTMODE, false)){
-            nightSwitch.setChecked(true);
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        } else {
-            nightSwitch.setChecked(false);
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        }
-    }
+
+
+
 
     @Override
     protected void onSaveInstanceState(@NonNull Bundle instanceState) {

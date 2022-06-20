@@ -1,24 +1,28 @@
 <resources>
-    <string name="app_name">Calculus</string>
-    <string name="clear">C</string>
-    <string name="backspace"><![CDATA[<|]]></string>
-    <string name="percent">%</string>
-    <string name="division">÷</string>
-    <string name="subtraction">-</string>
-    <string name="addition">+</string>
-    <string name="b_one">1</string>
-    <string name="b_two">2</string>
-    <string name="b_three">3</string>
-    <string name="b_zero">0</string>
-    <string name="b_dot">.</string>
-    <string name="b_four">4</string>
-    <string name="b_five">5</string>
-    <string name="b_six">6</string>
-    <string name="b_seven">7</string>
-    <string name="b_eight">8</string>
-    <string name="b_nine">9</string>
-    <string name="b_multiplication">x</string>
-    <string name="b_equals">=</string>
-    <string name="result">=0</string>
+    <string name="app_name" translatable="false">Calculus</string>
+    <string name="clear" translatable="false">C</string>
+    <string name="backspace" translatable="false"><![CDATA[<|]]></string>
+    <string name="percent" translatable="false">%</string>
+    <string name="division" translatable="false">÷</string>
+    <string name="subtraction" translatable="false">-</string>
+    <string name="addition" translatable="false">+</string>
+    <string name="b_one" translatable="false">1</string>
+    <string name="b_two" translatable="false">2</string>
+    <string name="b_three" translatable="false">3</string>
+    <string name="b_zero" translatable="false">0</string>
+    <string name="b_dot" translatable="false">.</string>
+    <string name="b_four" translatable="false">4</string>
+    <string name="b_five" translatable="false">5</string>
+    <string name="b_six" translatable="false">6</string>
+    <string name="b_seven" translatable="false">7</string>
+    <string name="b_eight" translatable="false">8</string>
+    <string name="b_nine" translatable="false">9</string>
+    <string name="b_multiplication" translatable="false">x</string>
+    <string name="b_equals" translatable="false">=</string>
+    <string name="result" translatable="false">=0</string>
     <string name="night_mode">Night mode</string>
+    <string name="no_problem">There is no problem</string>
+    <string name="one_action">Only one action a time, sorry</string>
+    <string name="one_dot">Your number already has a dot</string>
+    <string name="theme">Theme</string>
 </resources>

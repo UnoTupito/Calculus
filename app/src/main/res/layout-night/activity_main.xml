@@ -7,16 +7,13 @@
     android:background="@drawable/background_night"
     tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/switchNightMode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/b_theme"
+        style="@style/PurpleStyleButtonsFunctionsPortrait"
         app:layout_constraintStart_toStartOf="parent"
-        android:text="@string/night_mode"
-        android:background="@color/darkSlateBlue"
-        app:thumbTint="@color/darkSlateBlue"
-        />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="16sp"
+        android:text="@string/theme" />
 
     <TextView
         android:id="@+id/display"
